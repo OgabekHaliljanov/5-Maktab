@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-MAKTAB</title>
+    <link rel="stylesheet" href="./jadval.css">
+</head>
+
+<body>
+
+
+    <div class="continer">
+        <nav>
+            <div class="logo">
+                <h1>5-MAKTAB</h1>
+            </div>
+            <div class="kl">
+                <button id="toggleMenuBtn">Показать меню</button>
+
+                <div id="menu" class="menu">
+                    <ul>
+                        <li><a href="./index.html">Boshki oyna</a></li>
+                        <li><a href="./odob.html">Odob-axloq qoidalari</a> </li>
+                        <li><a href="https://login.kundalik.com/">Kundalik</a></li>
+                        <li><a href="./telega-completed/index.html">Yordam</a></li>
+                        <li><a href="./malumot.html">Maktab Haqida Malumot</a></li>
+                        <li><a href="./jadval.html">Maktab Hodimlari Boyicha Malumot</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <ul class="lp">
+                <li><a href="./index.html">Boshki oyna</a></li>
+                <li><a href="./odob.html">Odob-axloq qoidalari</a> </li>
+                <li><a href="https://login.kundalik.com/">Kundalik</a></li>
+                <li><a href="./telega-completed/index.html">Yordam</a></li>
+                <li><a href="./malumot.html">Maktab Haqida Malumot</a></li>
+                <li><a href="./jadval.html">Maktab Hodimlari Boyicha Malumot</a></li>
+
+            </ul>
+        </nav>
+
+
+    </div>
+
+
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Поиск по имени...">
+
+    <table border="1" id="staffTable">
+        <tr>
+            <th>№</th>
+            <th>Ф.И.О.</th>
+            <th>Должность</th>
+            <th>Стаж</th>
+            <th>Дата окончания контракта</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Абдурахмонова Нигина Абдурахмон кизи</td>
+            <td>Укитувчи</td>
+            <td>7</td>
+            <td>02.08.2023</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Махмудова Шахноза Абдурахмановна</td>
+            <td>Укитувчи</td>
+            <td>10</td>
+            <td>02.08.2023</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Ахмедова Махлифа Ахмедовна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td>01.09.2023</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Бобокулова Феруза Шухратовна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Абдуллаева Маймуна Махмудовна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Хасанова Малика Хасановна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Мирзаева Нодира Абдурахмановна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Мухамедова Мухфуза Абдурахмон кизи</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td>01.08.2023</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Ботиров Илхомжон Маърифович</td>
+            <td>Укитувчи</td>
+            <td>3</td>
+            <td>02.08.2023</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Рахимов Диёрбек Нозимжон угли</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td>02.08.2023</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Халитов Рафис Рустамович</td>
+            <td>Укитувчи</td>
+            <td>17</td>
+            <td>10.09.2023</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Абдурасулов Жакбарали Абдуганиевич</td>
+            <td>коровул</td>
+            <td>3</td>
+            <td>24.02.2023</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Эргашев Тохиржон Вахобович</td>
+            <td>Х.Мудири</td>
+            <td>17</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Хамидова Гавхархон Хамидуллаевна</td>
+            <td>УтиБду</td>
+            <td>17</td>
+            <td>18.09.2023</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Бозорова Дилфуза Тожибоевна</td>
+            <td>Кутубхоначи</td>
+            <td>31</td>
+            <td>18.09.2023</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td></td>
+            <td>Кадр</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Болтабоева Дилдора Умматалиевна</td>
+            <td>Укитувчи</td>
+            <td>22</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Суфижонова Одина Ибрагимовна</td>
+            <td>Укитувчи</td>
+            <td>33</td>
+            <td>22.09.2023</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Болтабоева Нигора Умматалиевна</td>
+            <td>Укитувчи</td>
+            <td>18</td>
+            <td>01.09.2023</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Карабоева Нигора Рахматуллаевна</td>
+            <td>Укитувчи</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Суфижонова Василахон Махмуджон кизи</td>
+            <td>Укитувчи</td>
+            <td>12</td>
+            <td>20.09.2023</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Онорбоева Мухлиса Голибжон кизи</td>
+            <td>Укитувчи</td>
+            <td>4</td>
+            <td>01.10.2023</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Исмоилова Мухайё Усубжон кизи</td>
+            <td>Логопед</td>
+            <td>3</td>
+            <td>18.09.2023</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Алижонова Гулноза Лочинбек кизи</td>
+            <td>Укитувчи</td>
+            <td>8</td>
+            <td>24.09.2023</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>Йулдошева Гулчехра Сайдуллаевна</td>
+            <td>Укитувчи</td>
+            <td>32</td>
+            <td>24.09.2023</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Султонова Шахноза Кахрамоновна</td>
+            <td>Укитувчи</td>
+            <td>4</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>Холикулова Садокат Ганижон кизи</td>
+            <td>Укитувчи</td>
+            <td>12</td>
+            <td>01.10.2023</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Сувонова Солия Камолдиновна</td>
+            <td>Укитувчи</td>
+            <td>12</td>
+            <td>20.09.2023</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Ахмаджонова Муслима Дилмурод кизи</td>
+            <td>Укитувчи</td>
+            <td>9</td>
+            <td>27.09.2023</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>Норматова Нилуфар Илхомжон кизи</td>
+            <td>Укитувчи</td>
+            <td>13</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        <div class="gh">
+            <h1>5-MAKTAB</h1><br>
+            <p> Copyright - 2024</p>
+        </div>
+
+        <ul>
+            <li> <a class="a" href="./havsizlik.html">Xavfsizlik siyosati</a> </li>
+            <li> <a class="a" href=""> Biz haqimizda</a></li>
+        </ul>
+    </div>
+</body>
+<script src="./jadval.js"></script>
+</html>

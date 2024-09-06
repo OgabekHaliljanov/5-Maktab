@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-MAKTAB</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <form class="form" onsubmit="sendEmailTelegram(event)">
+            
+            <h3>Yordam</h3>
+            <div class="form__group">
+                <label for="name">isim</label>
+                <input type="text" name="name" autocomplete="off" maxlength="50" required>
+
+                <label for="phone">Telafon nomer</label>
+                <input type="number " name="phone" autocomplete="off" maxlength="15" required>
+
+                <label for="izoh">Izoh Koldiring</label>
+                <input type="comment" name="izoh" autocomplete="off" maxlength="15" required>
+            </div>
+            <div class="form__submit-block">
+                <div class="form__submit-button">
+                    <button type="submit">Yuborish</button>
+                </div>
+            </div>
+            <div class="form__send-result"></div>
+        </form>
+
+    </div>
+    
+    <script src="./js/index.js"></script>
+</body>
+</html>

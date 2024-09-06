@@ -1,0 +1,986 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  @media only screen and (max-width: 768px) {
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 6px;
+    }
+  }
+  
+  /* Медиа-запрос для устройств с шириной экрана менее 480px */
+  @media only screen and (max-width: 480px) {
+    table {
+      font-size: 10px;
+    }
+  
+    th, td {
+      padding: 4px;
+    }
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    nav {
+        padding-top: 20px;
+        height: auto;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+  
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .logo {
+        margin-top: 10px;
+    }
+    .cont{
+      flex-direction: column;
+    }
+  
+    .container, .container1 {
+        width: 90%;
+        margin: 20px auto;
+    }
+    #toggleMenuBtn{
+      margin-left: -300px;
+    }
+  }
+  @media screen and (min-width: 760px) {
+    .kl{
+      width: 300px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+      display: none;
+    }
+    
+  }
+  @media screen and (max-width: 760px) {
+    .container {
+        width: 100%;
+  
+    }
+  
+    nav {
+      width: 100%;
+      height: 150px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+        text-align: center;
+        font-size: 20px;
+    }
+  
+   
+    .orta >h1{
+      font-size: 40px;
+    }
+    nav .lp {
+       display:none;
+  
+    }
+  .kl{
+    display: block;
+  }
+    nav ul li {
+        margin: 10px 0;
+        flex-direction: column;
+    }
+    input{
+     margin-left: 250px;
+      
+    }
+    .footer{
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .container {
+      width: 100%;
+  font-size: 10px;
+  }
+  .container1 {
+    width: 100%;
+  font-size: 10px;
+  }
+  .footer{
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 10px;
+  }
+  }
+  /* Для устройств шириной меньше 480px */
+  @media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+  }
+  
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .menu ul {
+   
+    padding: 0;
+  }
+  
+  .menu ul li {
+    padding: 8px 0;
+  }
+  
+  
+  
+  .menu ul li a:hover {
+    color: #007bff;
+  }
+  .menu {
+    display: none  ;
+    background-color: #00254e;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    animation: slideIn 0.3s forwards;
+    color: white;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .menu ul {
+    padding: 0;
+    flex-direction: column;
+  }
+  
+  .menu ul li {
+    padding: 8px 0;
+  }
+  
+  
+  
+  .menu ul li a:hover {
+    color: #007bff;
+  }
+  .footer{
+    width: 97.8%;
+    height: 150px;
+    background-color: rgb(6, 0, 55);
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .a{
+    font-size: 20px;
+  }
+  nav{
+    width: 97.8%;
+    height: 100px;
+    background-color: rgb(6, 0, 55);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 35px;
+    color: white;
+    display: flex;
+    list-style: none;
+   justify-content: space-between;
+  }
+  ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  a{
+    text-decoration: none;
+  color: white;
+  }
+  ul > li > a:hover{
+  cursor: pointer;
+  color: rgb(110, 110, 110);
+  }
+  
+  
+  #toggleMenuBtn{
+    width: 130px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0353af;
+    color: white;
+    margin-top: -60px;
+    margin-left: 150px;
+    position: absolute;
+  }
+  
+  .conainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  input{
+    width: 200px;
+    height: 40px;
+  text-indent: 20px;
+  outline: invert;
+  border: none;
+  border-bottom: 2px solid #00254e;
+  margin-top: -5px;
+ 
+  }
+  .dv{
+    width: 700px;
+    height: 400px;
+    display: flex;
+    gap: 300px;
+    margin-left: 150px;
+  }
+  
+  
+  .one{
+    width: 250px;
+    height: 90px;
+    position: absolute;
+  }
+  .two{
+    width: 250px;
+    height: 90px;
+    margin-left: 370px;
+  }
+  
+  .dve{
+    width: 700px;
+    height: 400px;
+    display: flex;
+    gap: 300px;
+    margin-left: 150px;
+    margin-top: -100px;
+  }
+  .ort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #clearInputsBtn{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0353af;
+    color: white; 
+    margin-top: 400px;
+    margin-left: -190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 768px) {
+    .dve{
+     display: block;
+     flex-direction: column;
+   
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+   
+
+    
+    .conainer{
+
+    flex-direction: column;
+     
+    }
+
+    .dve{
+      flex-direction: column;
+    
+     
+    }
+    .dv{
+      flex-direction: column;
+
+      
+    }
+}
+  @media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+}
+
+/* Для устройств шириной меньше 480px */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    .conainer{
+      margin-left: 200px;
+        width: 50%;
+      flex-direction: column;
+       
+      }
+      .kl{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+     
+      .two{
+       
+        margin-left: 470px;
+        position: absolute;
+      }
+      .dve{
+        flex-direction: column;
+      
+        margin-left: 15 0px;
+        margin-top: -100px;
+      }
+      .dv{
+        flex-direction: column;
+  
+        margin-left: 200px;
+      }
+    
+    input {
+        width: 100%;
+    }
+
+    .dv, .dve {
+        flex-direction: column;
+    }
+
+    .one, .two {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media screen and (min-width: 760px) {
+  .kl{
+    display: none;
+  }
+  
+}
+@media screen and (max-width: 760px) {
+  .container {
+      width: 100%;
+
+  }
+
+  nav {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;   text-align: center;
+      flex-direction: column;
+
+      font-size: 20px;
+    
+  }
+
+ 
+  .ort >h1{
+    font-size: 40px;
+  }
+ 
+.kl{
+  display: block;
+}
+.lp{
+ display: none;
+}
+  nav ul li {
+      margin: 10px 0;
+      flex-direction: column;
+  }
+  input{
+   margin-left: 250px;
+    
+  }
+  .footer{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .container {
+    width: 100%;
+font-size: 10px;
+}
+
+
+@media screen and (max-width: 770px) {
+  .ort {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -230px;
+}
+}
+
+
+
+}
+/* Для устройств шириной меньше 480px */
+@media screen and (max-width: 480px) {
+  .container {
+      width: 100%;
+  }
+  #clearInputsBtn{
+  margin-left: 90px;
+  }
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.menu ul {
+ 
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 8px 0;
+}
+
+
+
+.menu ul li a:hover {
+  color: #007bff;
+}
+.menu {
+  display: none  ;
+  background-color: #00254e;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  animation: slideIn 0.3s forwards;
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.menu ul {
+  padding: 0;
+  flex-direction: column;
+}
+
+.menu ul li {
+  padding: 8px 0;
+}
+
+/* Common styles for different screen sizes */
+.container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul > li > a:hover {
+  cursor: pointer;
+  color: rgb(110, 110, 110);
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .container {
+      width: 100%;
+  }
+
+  nav {
+      padding-top: 20px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 20px;
+  }
+
+  ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .logo {
+      margin-top: 10px;
+  }
+
+  .container, .container1 {
+      width: 90%;
+      margin: 20px auto;
+  }
+
+  #toggleMenuBtn {
+      margin-left: -300px;
+  }
+
+  .kl {
+      display: block;
+  }
+
+  .footer {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for screens up to 480px wide */
+  .container {
+      width: 100%;
+  }
+
+  nav {
+      width: 97.8%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 20px;
+  }
+
+  .ort > h1 {
+      font-size: 40px;
+  }
+
+  nav .lp {
+      display: none;
+  }
+
+  .kl {
+      display: block;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+      flex-direction: column;
+  }
+
+  input {
+      margin-left: 250px;
+  }
+
+  .footer {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 10px;
+  }
+
+  .dv,
+  .dve {
+      flex-direction: column;
+  }
+
+  .one,
+  .two {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  /* Styles for screens up to 580px wide */
+  .container {
+      width: 100%;
+      font-size: 10px;
+  }
+
+  .footer {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      font-size: 10px;
+  }
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+      transform: translateY(-100%);
+  }
+
+  to {
+      transform: translateY(0);
+  }
+}
+
+.menu {
+  display: none;
+  background-color: #00254e;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  animation: slideIn 0.3s forwards;
+  color: white;
+}
+
+.menu ul {
+  padding: 0;
+  flex-direction: column;
+}
+
+.menu ul li {
+  padding: 8px 0;
+}
+
+.menu ul li a:hover {
+  color: #007bff;
+}
+
+/* Additional styles */
+.unbreakable-container {
+  bottom: 10px;
+  left: 20px;
+}
+
+.unbreakable {
+  font-family: 'Anton', sans-serif;
+  line-height: 1;
+  letter-spacing: -.07em;
+  color: #fff;
+}
+
+.ks {
+  font-family: 'Anton', sans-serif;
+  font-size: 45px;
+  line-height: 1;
+  margin-top: -11px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #fc0; 
+}
+
+.menu ul li a:hover {
+  color: #007bff;
+}
+@import url(https://fonts.googleapis.com/css?family=Anton);
+
+
+.unbreakable-container
+{
+    
+    bottom: 10px;
+    left: 20px;
+}
+
+.unbreakable
+{
+    font-family: 'Anton', sans-serif;
+    line-height: 1;
+
+    letter-spacing: -.07em;
+
+    color: #fff;
+}
+
+.ks
+{
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+    line-height: 1;
+
+    margin-top: -11px;
+
+    -webkit-transition: all .3s ease-in-out;
+            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
+    -webkit-transform: translateX(-1000%);
+        -ms-transform: translateX(-1000%);
+            transform: translateX(-1000%);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+
+    color: #fc0;
+}
+
+.animate .ks
+{
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+
+span
+{
+    font-family: 'Anton', Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-indent: 12px;
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 0;
+    color: #fff;
+    filter: alpha(opacity=0);
+}
+
+.able
+{
+    -webkit-transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
+            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
+    letter-spacing: -.07em;
+}
+
+.break
+{
+    -webkit-transition: all .3s ease-in-out 2s;
+            transition: all .3s ease-in-out 2s;
+    letter-spacing: -.07em;
+}
+
+.un
+{
+    -webkit-transition: all .3s ease-in-out 1.7s;
+            transition: all .3s ease-in-out 1.7s;
+    letter-spacing: -.07em;
+}
+
+.animate .un
+{
+    font-size: 20px;
+
+    -webkit-transform: scale(1.5,1.5);
+        -ms-transform: scale(1.5,1.5);
+            transform: scale(1.5,1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+
+.animate .break
+{
+    font-size:20px;
+
+    -webkit-transform: scale(1.5,1.5);
+        -ms-transform: scale(1.5,1.5);
+            transform: scale(1.5,1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+
+.animate .able
+{
+    font-size: 20px;
+    margin-top: -10px;
+
+    -webkit-transform: scale(1.5,1.5);
+        -ms-transform: scale(1.5,1.5);
+            transform: scale(1.5,1.5);
+
+    opacity: 1;
+
+    filter: alpha(opacity=100);
+}
+.ort{
+  width: 200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.lk{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+   justify-content:center;
+
+}
+@media only screen and (max-width: 1150px) {
+
+    .im>img{
+        width: 600px;
+        height: 500px;
+    }
+}
+@media only screen and (max-width: 620px) {
+
+    .im>img{
+        
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Ваши стили для мобильных устройств */
+  .lp {
+      display: none; /* Скрыть меню в виде списка на маленьких экранах */
+  }
+  nav > ul> li{
+    display: flex;
+    align-items: center;
+     justify-content: center;
+    flex-direction: column;
+  }
+  nav>button{
+    display: flex;
+    align-items: center;
+     justify-content: center;
+  }
+
+  .kl {
+      display: block; /* Показать кнопку для открытия меню на маленьких экранах */
+  }
+  #menu {
+      display: none; /* Скрыть основное меню на маленьких экранах */
+  }
+ 
+}
+.im{
+    width: 100%;
+    height: 140vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;  
+
+
+}
+
+
+/* Стиль для таблицы */
+#staffTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#staffTable th, #staffTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#staffTable th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Чередование цветов строк */
+#staffTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover эффект для строк */
+#staffTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Стиль для поля ввода поиска */
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
