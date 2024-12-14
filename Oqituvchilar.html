@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'qituvchi Ro'yxati</title>
+    <style>
+        /* Styling remains unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+        .add-btn {
+            background-color: #4CAF50;
+            margin-top: 20px;
+        }
+        .present-btn {
+            background-color: #28a745;
+        }
+        .absent-btn {
+            background-color: #dc3545;
+        }
+        .edit-btn {
+            background-color: #ffc107;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        input {
+            width: calc(33% - 10px);
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>O'qituvchilar Ro'yxati</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>F.I.O.</th>
+                    <th>Kasb</th>
+                    <th>Harakatlar</th>
+                </tr>
+            </thead>
+            <tbody id="teacherTable">
+                <!-- Dynamic content -->
+            </tbody>
+        </table>
+
+        <h3>O'qituvchi Qo'shish</h3>
+        <input type="text" id="teacherName" placeholder="F.I.O.">
+        <input type="text" id="teacherProfession" placeholder="Kasb">
+        <button class="add-btn" onclick="addTeacher()">Qo'shish</button>
+    </div>
+
+    <script>
+        const teacherTable = document.getElementById("teacherTable");
+        let teachers = JSON.parse(localStorage.getItem("teachers")) || [
+            { id: 1, name: "Нишонов Нодирбек", profession: "Директор", status: "" },
+            { id: 2, name: "Уришев Фуркат", profession: "ММИБДУ", status: "" },
+            { id: 3, name: "Вахобова Нилуфар", profession: "ММИБДУ", status: "" },
+        ];
+
+        // Render the teacher list
+        function renderTeachers() {
+            teacherTable.innerHTML = "";
+            teachers.forEach((teacher, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${teacher.name}</td>
+                    <td>${teacher.profession}</td>
+                    <td>
+                        <button class="present-btn" onclick="markStatus(${index}, 'Keldi')">Keldi</button>
+                        <button class="absent-btn" onclick="markStatus(${index}, 'Kelmadi')">Kelmadi</button>
+                        <button class="edit-btn" onclick="editTeacher(${index})" ${teacher.status ? "" : "disabled"}>O'zgartirish</button>
+                    </td>
+                `;
+                teacherTable.appendChild(row);
+            });
+        }
+
+        // Add new teacher
+        function addTeacher() {
+            const teacherName = document.getElementById("teacherName").value.trim();
+            const teacherProfession = document.getElementById("teacherProfession").value.trim();
+
+            if (!teacherName || !teacherProfession) {
+                alert("Iltimos, barcha maydonlarni to'ldiring!");
+                return;
+            }
+
+            teachers.push({
+                id: teachers.length + 1,
+                name: teacherName,
+                profession: teacherProfession,
+                status: "",
+            });
+
+            localStorage.setItem("teachers", JSON.stringify(teachers));
+            renderTeachers();
+
+            // Clear inputs
+            document.getElementById("teacherName").value = "";
+            document.getElementById("teacherProfession").value = "";
+        }
+
+        // Mark attendance status
+        function markStatus(index, status) {
+            teachers[index].status = status;
+            localStorage.setItem("teachers", JSON.stringify(teachers));
+            renderTeachers();
+            alert(`${teachers[index].name} ${status.toLowerCase()} deb belgilandi.`);
+        }
+
+        // Edit teacher details
+        function editTeacher(index) {
+            const teacher = teachers[index];
+            const newName = prompt("Yangi F.I.O. ni kiriting:", teacher.name);
+            const newProfession = prompt("Yangi kasbni kiriting:", teacher.profession);
+
+            if (newName && newProfession) {
+                teachers[index].name = newName.trim();
+                teachers[index].profession = newProfession.trim();
+                localStorage.setItem("teachers", JSON.stringify(teachers));
+                renderTeachers();
+            } else {
+                alert("Ma'lumotlar o'zgartirilmadi.");
+            }
+        }
+
+        // Load teachers on page load
+        window.onload = renderTeachers;
+    </script>
+</body>
+</html>

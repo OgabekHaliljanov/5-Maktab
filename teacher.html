@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'qituvchi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .teacher-name {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+        .present {
+            background-color: #4caf50;
+        }
+        .absent {
+            background-color: #f44336;
+        }
+        .update {
+            background-color: #ff9800;
+        }
+        .submit-btn {
+            background-color: #2196F3;
+            margin-top: 20px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Teacher Name -->
+    <div class="teacher-name">O'qituvchi: <span id="teacherDisplayName"></span> | Sinf: <span id="classDisplayName"></span></div>
+
+    <!-- Students Table -->
+    <div class="container">
+        <h2>O'quvchilar Ro'yxati</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>O'quvchi Ismi</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable">
+                <!-- Rows will be generated dynamically -->
+            </tbody>
+        </table>
+        <button onclick="redirectToKoshish()">Koshishga O'tish</button>
+        <!-- Submit Attendance Button -->
+        <button class="submit-btn" onclick="submitAttendance()">Submit Attendance</button>
+    </div>
+
+    <script>
+        // Initialize teacher and class names
+        const teacherName = "Nishonov";
+        const className = "7-A";
+
+        // Display teacher and class names
+        document.getElementById('teacherDisplayName').textContent = teacherName;
+        document.getElementById('classDisplayName').textContent = className;
+
+        // Students data
+        const students = [
+            'Alisher',
+            'Malika',
+            'Bekzod',
+            'Aziza',
+            'Sardor'
+        ];
+
+        const tableBody = document.getElementById('studentTable');
+        const attendanceKey = 'attendance';
+
+        // Populate student table
+        students.forEach((student, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${student}</td>
+                <td id="status-${index}">
+                    <button class="present" onclick="markStatus(${index}, 'Kelgan')">Kelgan</button>
+                    <button class="absent" onclick="markStatus(${index}, 'Kelmadi')">Kelmadi</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+        // Save attendance status to localStorage
+        function markStatus(index, status) {
+            const studentName = students[index];
+            const attendance = JSON.parse(localStorage.getItem(attendanceKey)) || [];
+
+            // Check if the student already has an entry
+            const existingIndex = attendance.findIndex(
+                (entry) => entry.studentName === studentName && entry.teacherName === teacherName && entry.className === className
+            );
+
+            if (existingIndex !== -1) {
+                attendance[existingIndex].status = status; // Update existing entry
+            } else {
+                attendance.push({
+                    index: index + 1,
+                    studentName,
+                    teacherName,
+                    className,
+                    status
+                });
+            }
+
+            localStorage.setItem(attendanceKey, JSON.stringify(attendance));
+            updateStatusCell(index, status);
+        }
+
+        // Update the status cell to show current status and "Изменить" button
+        function updateStatusCell(index, status) {
+            const statusCell = document.getElementById(`status-${index}`);
+            statusCell.innerHTML = `
+                ${status} 
+                <button class="update" onclick="editStatus(${index})">Изменить</button>
+            `;
+            statusCell.style.fontWeight = 'bold';
+            statusCell.style.color = status === 'Kelgan' ? '#4caf50' : '#f44336';
+        }
+
+        // Edit status: reset the buttons for re-selection
+        function editStatus(index) {
+            const statusCell = document.getElementById(`status-${index}`);
+            statusCell.innerHTML = `
+                <button class="present" onclick="markStatus(${index}, 'Kelgan')">Kelgan</button>
+                <button class="absent" onclick="markStatus(${index}, 'Kelmadi')">Kelmadi</button>
+            `;
+        }
+
+        // Redirect to another page
+        function redirectToKoshish() {
+            // Save teacher and class information to localStorage
+            localStorage.setItem('teacherName', teacherName);
+            localStorage.setItem('className', className);
+
+            // Redirect to koshish.html
+            window.location.href = './koshish.html';
+        }
+
+        // Submit Attendance function
+        function submitAttendance() {
+            const attendance = JSON.parse(localStorage.getItem(attendanceKey)) || [];
+            if (attendance.length > 0) {
+                // You can send this data to the server using an API here.
+                // For example, using fetch() or axios to send the data to a server.
+                // Here's a simple example where we log it for demonstration:
+
+                console.log("Submitting attendance data:", attendance);
+
+                // Optionally, redirect to another page after submission (like confirming the action)
+                window.location.href = './koshish.html';
+            } else {
+                alert('No attendance data to submit.');
+            }
+        }
+    </script>
+</body>
+</html>
